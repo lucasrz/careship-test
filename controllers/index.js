@@ -1,7 +1,9 @@
 var express = require('express'),
   router = express.Router()
 
-router.use('/cash-machine', require('./cash-machine'))
+var cashMachineController = require('./cash-machine')
+
+router.post('/api/cash-machine', cashMachineController.post)
 
 router.get('/', function (req, res) {
   res.render('index')

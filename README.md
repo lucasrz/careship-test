@@ -1,5 +1,11 @@
-# Your starting point for your next great web app
+Cash Machine API
 
-The purpose for this repository is to serve as a base project for your next [Node](http://nodejs.org/) and [Express](http://expressjs.com/) web app. Clone it and you are ready to go.
+The solution was developed with express.js and node.js.
 
-It will provide you with a simple but solid structure on which to build on. We will do our best to keep it up to date with the latest node and express versions.
+To access the endpoint you must:
+  - npm i
+  - node app.js
+  - And make a post request to /api/cash-machine with the withdrawal amount in body's withdraw field
+
+To test the code you should run:
+  - npm test

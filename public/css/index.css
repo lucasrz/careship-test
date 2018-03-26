@@ -1,0 +1,12 @@
+.page-center {
+  width: 500px !important;
+  height: 300px !important;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  font-weight: bolder;
+}

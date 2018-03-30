@@ -1,6 +1,6 @@
 {
   "name": "Base",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Basic structure for Express web apps.",
   "main": "app.js",
   "scripts": {

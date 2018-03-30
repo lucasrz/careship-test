@@ -12,22 +12,22 @@ html
         input(type='submit',value='Withdraw').input__button
   div.result-container.result-container--margin-top 
     if (typeof(result) === 'string' && result === 'NoteUnavailableException')
-        p.label__result--error Ther Are No Available Notes For This Amount
+        p.label__result--error There Are No Available Notes For This Amount
     else if (typeof(result) === 'string' && result === 'InvalidArgumentException')
-        p.label__result--error Invalid Output, Please Try Again
+        p.label__result--error Invalid Input, Please Try Again
     else if(result && !result.length)
         p.label__result--error Please Put The Amount To Be Withdrawn
     else if(typeof(result) !== 'undefined')
-        div.note-container.note-container--left.note-container--center
+        div.note-container.note-container--left
           label.label__result #{result[0]}x  
           img.image(src='/imgs/100bill.png').img
-        div.note-container.note-container--left.note-container--margin-left.note-container--center 
+        div.note-container.note-container--left.note-container--margin-left
           label.label__result #{result[1]}x 
           img.image(src='/imgs/50bill.png').img
-        div.note-container.note-container--clear-left.note-container--center 
+        div.note-container.note-container--clear-left
           label.label__result #{result[2]}x 
           img.image(src='/imgs/20bill.png').img
-        div.note-container.note-container--left.note-container--smaller-note.note-container--center 
+        div.note-container.note-container--left.note-container--smaller-note
           label.label__result #{result[3]}x 
           img.image(src='/imgs/10bill.png').img
             

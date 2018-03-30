@@ -8,3 +8,14 @@ exports.post = function (req, res) {
     res: result
   })
 }
+
+exports.viewPost = function (req, res) {
+  var amount = req.body.withdraw
+  if (!amount) {
+    amount = null
+  }
+  var result = CashMachine.withdraw(amount)
+  res.render('index', {
+    result: result
+  })
+}

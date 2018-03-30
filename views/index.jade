@@ -1,10 +1,34 @@
 doctype html
 html
-  div.page-center
-    head
-      link(href='/css/index.css', rel='stylesheet')
-    body
-      title Cash Machine API
-      h1 Welcome to Cash Machine API
-      h2
-        | Cash Out!
+  head
+    link(href='/css/index.css', rel='stylesheet')
+  body
+    div.header
+      title Cash Machine 
+      h1.text--left Welcome  
+      h2.text--left To The Cash <br> Machine
+      form(id="input_form", name="withdrawal", method="post", action="/")
+        input(type="number", placeholder="Cash Out!", name="withdraw").input__withdraw
+        input(type='submit',value='Withdraw').input__button
+  div.result-container.result-container--margin-top 
+    if (typeof(result) === 'string' && result === 'NoteUnavailableException')
+        p.label__result--error Ther Are No Available Notes For This Amount
+    else if (typeof(result) === 'string' && result === 'InvalidArgumentException')
+        p.label__result--error Invalid Output, Please Try Again
+    else if(result && !result.length)
+        p.label__result--error Please Put The Amount To Be Withdrawn
+    else if(typeof(result) !== 'undefined')
+        div.note-container.note-container--left.note-container--center
+          label.label__result #{result[0]}x  
+          img.image(src='/imgs/100bill.png').img
+        div.note-container.note-container--left.note-container--margin-left.note-container--center 
+          label.label__result #{result[1]}x 
+          img.image(src='/imgs/50bill.png').img
+        div.note-container.note-container--clear-left.note-container--center 
+          label.label__result #{result[2]}x 
+          img.image(src='/imgs/20bill.png').img
+        div.note-container.note-container--left.note-container--smaller-note.note-container--center 
+          label.label__result #{result[3]}x 
+          img.image(src='/imgs/10bill.png').img
+            
+            
